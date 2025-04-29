@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ISS Visible Passes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	</head>
+	<body class="is-preload">
+		
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">ISS Visible Passes</a></h1>
+					<p>Com a ISS Visible Passes, você pode monitorar as <br />próximas passagens visíveis da Estação Espacial Internacional.<br /> A ferramenta traz a previsão do tempo para cada passagem,<br /> garantindo que você não perca nenhum momento!</p>
+					<!-- Formulário de busca -->
+					<div style="display: flex; justify-content: center; margin-top: 20px;">
+						<form id="city-form" action="/buscar" method="GET" style="display: flex; gap: 20px; align-items: center;">
+							<input type="text" name="cidade" placeholder="Digite sua cidade e estado" required style="padding: 12px; width: 400px;">
+							<button type="submit" class="button primary icon solid fa-search">Buscar Passagens</button>
+						</form>
+					</div>
+				</div>
+			</header>
+
+		<!-- Two -->
+			<section id="two" class="wrapper">
+				<div class="inner alt">
+					<section class="spotlight">
+						<div class="image"><img src="/static/assets/images/pic01.jpg" alt="" /></div>
+						<div class="content">
+							<h3>Passagens Visíveis</h3>
+							<p>Com a ISS Visible Passes, você pode monitorar as próximas passagens visíveis da ISS, diretamente do seu dispositivo. A ferramenta traz a previsão do tempo para cada passagem, garantindo que você não perca nenhum momento!</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="/static/assets/images/pic02.jpg" alt="" /></div>
+						<div class="content">
+							<h3>Condições Climáticas</h3>
+							<p>Antes de sair para observar, veja as condições climáticas da sua região, para garantir uma experiência sem surpresas. Assim você pode aproveitar melhor cada passagem da ISS.</p>
+						</div>
+					</section>
+					<section class="spotlight">
+						<div class="image"><img src="/static/assets/images/pic03.jpg" alt="" /></div>
+						<div class="content">
+							<h3>Interface Interativa</h3>
+							<p>A interface é simples e fácil de usar, permitindo que qualquer pessoa, desde iniciantes até observadores experientes, aproveite ao máximo as passagens visíveis da ISS.
+
+							</p>
+						</div>
+					</section>
+					<section class="special">
+						<ul class="icons labeled">
+							<li><span class="icon solid fa-sync"><span class="label">Atualizações ao Vivo</span></span></li>
+							<li><span class="icon solid fa-code"><span class="label">Código Aberto</span></span></li>
+							<li><span class="icon solid fa-desktop"><span class="label">Disponível Online</span></span></li>
+						</ul>
+					</section>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2 special">
+				<header class="major">
+					<h2>Conheça mais do meu trabalho</h2>
+					<p>Sou Danyel Barboza, desenvolvedor focado em desenvolvimento web-back end com Java e Python. <br />Explore outros projetos e veja mais sobre meu trabalho em <a href="https://danyelbarboza.com" target="_blank">meu portfólio</a> ou no <a href="https://github.com/danyelbarboza" target="_blank">meu GitHub</a>.</p>
+				</header>
+				<ul class="actions special">
+					<li><a href="https://danyelbarboza.com" class="button primary icon solid fa-globe">Portfólio</a></li>
+					<li><a href="https://github.com/danyelbarboza" class="button icon brands fa-github">GitHub</a></li>
+				</ul>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<p class="copyright">&copy; 2025 Danyel Barboza. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/static/assets/js/browser.min.js"></script>
+			<script src="/static/assets/js/breakpoints.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<script src="/static/assets/js/main.js"></script>
+
+	</body>
+</html>
