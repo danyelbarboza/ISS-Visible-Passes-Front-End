@@ -8,7 +8,7 @@
 	<head>
 		<title>ISS Visible Passes</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/static/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -19,12 +19,23 @@
 			<header id="header">
 				<div class="content">
 					<h1><a href="#">ISS Visible Passes</a></h1>
-					<p>Com a ISS Visible Passes, você pode monitorar as <br />próximas passagens visíveis da Estação Espacial Internacional.<br /> A ferramenta traz a previsão do tempo para cada passagem,<br /> garantindo que você não perca nenhum momento!</p>
+					<p>Com a ISS Visible Passes, monitora as próximas passagens visíveis da Estação Espacial Internacional em qualquer lugar do mundo. A ferramenta traz a previsão do tempo para cada passagem, garantindo que você não perca nenhum momento!</p>
 					<!-- Formulário de busca -->
-					<div style="display: flex; justify-content: center; margin-top: 20px;">
-						<form id="city-form" action="/buscar" method="GET" style="display: flex; gap: 20px; align-items: center;">
-							<input type="text" name="cidade" placeholder="Digite sua cidade e estado" required style="padding: 12px; width: 400px;">
-							<button type="submit" class="button primary icon solid fa-search">Buscar Passagens</button>
+					<div class="form-container">
+						<form id="city-form" class="search-form" action="/buscar#resultados" method="GET">
+							<input
+								type="text"
+								name="cidade"
+								class="search-input"
+								placeholder="Digite sua cidade e estado"
+								required
+							/>
+							<button
+								type="submit"
+								class="button primary icon solid fa-search search-button"
+							>
+								Buscar Passagens
+							</button>
 						</form>
 					</div>
 				</div>
@@ -33,13 +44,6 @@
 		<!-- Two -->
 			<section id="two" class="wrapper">
 				<div class="inner alt">
-					<section class="spotlight">
-						<div class="image"><img src="/static/assets/images/pic01.jpg" alt="" /></div>
-						<div class="content">
-							<h3>Passagens Visíveis</h3>
-							<p>Com a ISS Visible Passes, você pode monitorar as próximas passagens visíveis da ISS, diretamente do seu dispositivo. A ferramenta traz a previsão do tempo para cada passagem, garantindo que você não perca nenhum momento!</p>
-						</div>
-					</section>
 					<section class="spotlight">
 						<div class="image"><img src="/static/assets/images/pic02.jpg" alt="" /></div>
 						<div class="content">
@@ -70,7 +74,7 @@
 			<section id="three" class="wrapper style2 special">
 				<header class="major">
 					<h2>Conheça mais do meu trabalho</h2>
-					<p>Sou Danyel Barboza, desenvolvedor focado em desenvolvimento web-back end com Java e Python. <br />Explore outros projetos e veja mais sobre meu trabalho em <a href="https://danyelbarboza.com" target="_blank">meu portfólio</a> ou no <a href="https://github.com/danyelbarboza" target="_blank">meu GitHub</a>.</p>
+					<p>Sou Danyel Barboza, desenvolvedor focado em desenvolvimento web back-end com Java e Python. <br />Explore outros projetos e veja mais sobre meu trabalho em <a href="https://danyelbarboza.com" target="_blank">meu portfólio</a> ou no <a href="https://github.com/danyelbarboza" target="_blank">meu GitHub</a>.</p>
 				</header>
 				<ul class="actions special">
 					<li><a href="https://danyelbarboza.com" class="button primary icon solid fa-globe">Portfólio</a></li>

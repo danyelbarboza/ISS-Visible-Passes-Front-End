@@ -3425,6 +3425,68 @@ input, select, textarea {
 	}
 
 /* Header */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Container que segura o formulário */
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo do formulário (desktop original) */
+.search-form {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Estilo do campo de texto (desktop original) */
+.search-input {
+    padding: 12px;
+    width: 400px; /* Largura fixa como no seu original */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Efeitos opcionais (manter se quiser) */
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* --- AJUSTES PARA TELAS MENORES (MOBILE) --- */
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column; /* Input e botão um embaixo do outro */
+        align-items: stretch;   /* Faz input e botão ocuparem a largura total */
+        gap: 10px;              /* Espaço entre input e botão na vertical */
+    }
+
+    .search-input {
+        /* O input já ocupará a largura por causa do align-items: stretch no form */
+        /* Poderia ajustar font-size ou padding aqui se necessário */
+         width: 100%; /* Garante que ocupe toda a largura */
+    }
+
+    .search-button {
+        /* O botão já ocupará a largura por causa do align-items: stretch no form */
+        width: 100%; /* Garante que ocupe toda a largura */
+        padding: 12px 15px; /* Pode ajustar o padding se necessário no mobile */
+        /* font-size: 0.95rem; */ /* Pode diminuir a fonte se o texto vazar */
+        /* white-space: normal; */ /* Descomente se precisar que o texto quebre linha no mobile */
+    }
+}
+
 #header {
     position: relative;
 }
@@ -3668,11 +3730,21 @@ input, select, textarea {
 			font-size: 1.1em;
 			line-height: 1.35em;
 			margin-top: 0;
+			text-align: center;
+			word-wrap: break-word; /* Quebra as palavras se não houver espaço */
+			white-space: normal; /* Faz com que o texto quebre quando necessário */
 		}
 
 			#header p br {
 				display: inline;
 			}
+
+			@media (max-width: 768px) {
+				#header p {
+				  font-size: 1rem; /* Fonte menor para telas menores */
+				  padding: 0 10px; /* Adiciona espaçamento nas laterais em telas pequenas */
+				}
+			  }
 
 			#header .content {
 				text-align: center;
@@ -3745,17 +3817,58 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#header {
-				background-image: url("images/overlay.png"), url("images/pattern-size2.svg");
+				background-image: url("/static/assets/images/iss.jpg");
+				background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #ffffff;
+				padding: 4.5em 0 2.5em 0;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+				position: relative;
+				width: 100%;  /* Garante que ocupa toda a largura */
 			}
-
 		}
 
 		@media screen and (max-width: 980px) {
 
 			#header {
-				height: auto;
-				min-height: 0;
+				background-image: url("/static/assets/images/iss.jpg");
+				background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #ffffff;
+				padding: 4.5em 0 2.5em 0;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+				position: relative;
+				width: 100%;  /* Garante que ocupa toda a largura */
 			}
+		}
 
 				#header .content {
 					margin: -2em 4em 0 0;
@@ -3773,18 +3886,39 @@ input, select, textarea {
 		@media screen and (max-width: 980px) and (orientation: portrait) {
 
 			#header {
-				padding: 6em 3em 4em 3em ;
-				-moz-flex-direction: column-reverse;
-				-webkit-flex-direction: column-reverse;
-				-ms-flex-direction: column-reverse;
-				flex-direction: column-reverse;
+				background-image: url("/static/assets/images/iss.jpg");
+				background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #ffffff;
+				padding: 4.5em 0 2.5em 0;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+				position: relative;
+				width: 100%;  /* Garante que ocupa toda a largura */
 			}
+		}
 
 				#header .content {
 					display: block;
 					width: 100%;
 					text-align: center;
 					margin: 0 0 2em 0;
+				}
+				#header p {
+					font-size: 1em;
 				}
 
 				#header .image {
@@ -3796,8 +3930,30 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				background-image: url("images/overlay.png"), url("images/pattern-size3.svg");
+				background-image: url("/static/assets/images/iss.jpg");
+				background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #ffffff;
+				padding: 4.5em 0 2.5em 0;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+				position: relative;
+				width: 100%;  /* Garante que ocupa toda a largura */
 			}
+		}
 
 				#header h1 {
 					font-size: 2em;
@@ -3811,45 +3967,116 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 736px) and (orientation: landscape) {
-
 			#header {
-				padding: 2em 2em 0.1em 2em ;
+				background-image: url("/static/assets/images/iss.jpg");
+				background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #ffffff;
+				padding: 4.5em 0 2.5em 0;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+				position: relative;
+				width: 100%;  /* Garante que ocupa toda a largura */
 			}
-
-				#header .content {
-					margin: 0 2em 2em 0;
-				}
-
-				#header .image {
-					font-size: 0.8em;
-					width: 15em;
-					max-width: 20vw;
-				}
-
-					#header .image .inner, #header .image:before, #header .image:after {
-						font-size: 0.8em;
-					}
-
+		}
+		
+			#header .content {
+				margin: 0 2em 2em;
+			}
+		
+			#header .image {
+				font-size: 0.8em; /* Pode ser ajustado para porcentagens ou mais flexível */
+				width: 40vw; /* Ajuste a largura com base na largura da tela */
+				max-width: 60vw; /* Limite a largura máxima com 60% da tela */
+			}
+		
+			/* Simplificando a definição de imagem e pseudo-elementos */
+			#header .image .inner,
+			#header .image:before,
+			#header .image:after {
+				font-size: 0.8em;
+			}
 		}
 
 		@media screen and (max-width: 736px) and (orientation: portrait) {
-
 			#header {
-				padding: 3em 1.5em 1em 1.5em ;
+				background-image: url("/static/assets/images/iss.jpg");
+				background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #ffffff;
+				padding: 4.5em 0 2.5em 0;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+				position: relative;
+				width: 100%;  /* Garante que ocupa toda a largura */
 			}
-
-				#header .image {
-					font-size: 0.6em;
-					max-width: 60vw;
-				}
-
 		}
+
+			#header p {
+				font-size: 1em;
+			}
+		
+			#header .image {
+				font-size: 0.8em; /* Ajuste para um valor mais legível */
+				width: 80vw; /* Garantir que a imagem ocupe 80% da tela, sem ultrapassar */
+				max-width: 100%; /* Evita que ultrapasse a largura da tela */
+			}
+		}
+		
 
 	@media screen and (max-width: 480px) and (orientation: landscape) {
 
 		#header {
-			padding: 2em 1.5em 0.1em 1.5em ;
+			background-image: url("/static/assets/images/iss.jpg");
+			background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			color: #ffffff;
+			padding: 4.5em 0 2.5em 0;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+			position: relative;
+			width: 100%;  /* Garante que ocupa toda a largura */
 		}
+	}
 
 			#header .image {
 				font-size: 0.7em;
@@ -3864,9 +4091,29 @@ input, select, textarea {
 	@media screen and (max-width: 480px) and (orientation: portrait) {
 
 		#header {
-			padding: 2em 1em 0.1em 1em ;
+			background-image: url("/static/assets/images/iss.jpg");
+			background-size: cover;  /* Isso faz a imagem cobrir toda a área */
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			color: #ffffff;
+			padding: 4.5em 0 2.5em 0;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			min-height: 100vh;  /* Alterado para 100vh (100% da altura da viewport) */
+			position: relative;
+			width: 100%;  /* Garante que ocupa toda a largura */
 		}
-
 	}
 
 		body.is-mobile #header {
@@ -3911,7 +4158,7 @@ input, select, textarea {
 		}
 
 	}
-
+	
 /* Main */
 
 	#main {
@@ -4014,10 +4261,34 @@ input, select, textarea {
 	}
 	
 	#two .inner.alt .spotlight .content h3 {
-		font-size: 1em !important;
+		font-size: 0.9em !important;
+		text-align: leftt !important;
 		font-weight: bold !important;
-		margin-bottom: 0.3em !important;
+		margin-bottom: 0.6em !important;
 	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	  }
+	  
+	  .spotlight {
+		background: #f9f9f9;
+		padding: 1rem;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		transition: transform 0.2s ease;
+	  }
+
+	  .spotlight p {
+		padding: 0 15px; /* 15px à esquerda e à direita */
+	  }
+	  
+	  .spotlight:hover {
+		transform: scale(1.02);
+	  }
 	
 	#two .inner.alt .spotlight .content p {
 		margin-bottom: 0.2em !important;

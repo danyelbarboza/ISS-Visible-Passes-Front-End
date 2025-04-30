@@ -16,7 +16,10 @@ def buscar():
     cidade = request.args.get('cidade')
     passagens, nome_real_cidade, avaliacoes = RunTheProgram.obter_informacoes(cidade)
     
-    return render_template("result.html", nome_real_cidade=nome_real_cidade, passagens=passagens, avaliacoes=avaliacoes)
+    return render_template("result.html", 
+                         nome_real_cidade=nome_real_cidade,
+                         passagens=passagens,
+                         avaliacoes=avaliacoes)
         
 if __name__ == "__main__":
     app.run(debug=True)
