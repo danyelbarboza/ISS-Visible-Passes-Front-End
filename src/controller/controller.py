@@ -1,7 +1,7 @@
-from n2yo_client import N2yoClient
-from openmeteo_client import OpenMeteoClient
-from config import Config
-from nominatim_client import NominatimClient
+from src.clients.n2yo_client import N2yoClient
+from src.clients.openmeteo_client import OpenMeteoClient
+from src.config.Config import Config
+from src.clients.nominatim_client import NominatimClient
 
 class RunTheProgram:
     

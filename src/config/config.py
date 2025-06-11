@@ -1,6 +1,5 @@
-import os
 from dotenv import load_dotenv
-from nominatim_client import NominatimClient
+from src.clients.nominatim_client import NominatimClient
 
 
 class Config:
