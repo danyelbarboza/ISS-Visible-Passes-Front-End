@@ -137,4 +137,4 @@ Create a `.env` file in the root directory of the project. This file will store 
 
 ## License
 
-**MIT License** - This project is open source and available for use and modification. See the `LICENSE` file for more details.
+**MIT License** - Available for use and modification. See the LICENSE file for details.
