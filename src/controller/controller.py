@@ -41,6 +41,8 @@ class Controller:
         # Cria um cliente N2yo e obtém as passagens da ISS para as coordenadas fornecidas
         n2yo = N2yoClient(config)
         all_passes = n2yo.display_passes()
+        if all_passes is None:
+            return 1
         
         # Obtém os dados meteorológicos para cada passagem
         weather_data_id = []

@@ -14,11 +14,15 @@ class N2yoClient:
     
     def fetch_data(self):
         response = requests.get(f"https://api.n2yo.com/rest/v1/satellite/visualpasses/{self.norad_id}/{self.latitude}/{self.longitude}/{self.observer_alt}/{self.days}/{self.min_visibility}/&apiKey={self.api_key}")
+        print(response.json())
+        if response.json()["info"]["passescount"] == 0:
+            return None
         return response.json()
     
     def display_passes(self):
+        if self.fetch_data() is None:
+            return None
         passes = self.fetch_data()["passes"]
-        print(f"Passes: {passes}")
         all_passes = []
         count = 1
         for p in passes:

@@ -14,8 +14,10 @@ def works(page_name):
 @app.route("/buscar")
 def buscar():
     cidade = request.args.get('cidade')
-    if Controller.obter_informacoes(cidade) is None:
-        return render_template("error.html")
+    if Controller.obter_informacoes(cidade) == 1:
+        return render_template("error_sem_passagens.html")
+    if Controller.obter_informacoes(cidade) == None:
+        return render_template("error_nome_cidade.html")
     
     passagens, nome_real_cidade, avaliacoes = Controller.obter_informacoes(cidade)
     
