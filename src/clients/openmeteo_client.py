@@ -16,7 +16,7 @@ class OpenMeteoClient:
             "longitude": longitude,
             "start_hour": date_time,
             "end_hour": date_time,
-            "timezone": "America/Sao_Paulo",
+            "timezone": "auto",
             "hourly": "temperature_2m,cloudcover,visibility,relative_humidity_2m,is_day"
         }
         responses = self.openmeteo.weather_api(url, params=params)
