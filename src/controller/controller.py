@@ -1,9 +1,9 @@
 from src.clients.n2yo_client import N2yoClient
 from src.clients.openmeteo_client import OpenMeteoClient
-from src.config.Config import Config
+from src.config.config import Config
 from src.clients.nominatim_client import NominatimClient
 
-class RunTheProgram:
+class Controller:
     
     def coordenadas_nominatim(cidade_usuario):
         # Obtém as coordenadas da cidade informada utilizando a API Nominatim
@@ -17,12 +17,16 @@ class RunTheProgram:
     
     def obter_informacoes(cidade_usuario):
         # Obter coordenadas
-        latitude, longitude = RunTheProgram.coordenadas_nominatim(cidade_usuario)
+        latitude, longitude = Controller.coordenadas_nominatim(cidade_usuario)
         if latitude is None or longitude is None:
             return None, "Cidade não encontrada"
         
+        print(f"Latitude: {latitude}")
+        print(f"Longitude: {longitude}")
+        
         # Obter nome real da cidade
-        nome_real_cidade = RunTheProgram.nome_da_cidade_nominatim(latitude, longitude)
+        nome_real_cidade = Controller.nome_da_cidade_nominatim(latitude, longitude)
+        print(f"Nome real da cidade: {nome_real_cidade}")
         
         # Cria um objeto de configuração com as coordenadas da cidade
         config = Config(latitude, longitude)
@@ -59,7 +63,7 @@ class RunTheProgram:
                 "is_day": "Day" if weather_data['weather']['is_day'] == 1 else "Night"
             }
             resultados.append(resultado)
-            avaliacoes.append(RunTheProgram.avaliar_visibilidade_iss(resultado))
+            avaliacoes.append(Controller.avaliar_visibilidade_iss(resultado))
             
         return resultados, nome_real_cidade, avaliacoes
     

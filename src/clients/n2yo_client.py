@@ -18,6 +18,7 @@ class N2yoClient:
     
     def display_passes(self):
         passes = self.fetch_data()["passes"]
+        print(f"Passes: {passes}")
         all_passes = []
         count = 1
         for p in passes:

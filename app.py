@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect
-from src.controller.controller import RunTheProgram
+from src.controller.controller import Controller
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ def works(page_name):
 @app.route("/buscar")
 def buscar():
     cidade = request.args.get('cidade')
-    passagens, nome_real_cidade, avaliacoes = RunTheProgram.obter_informacoes(cidade)
+    passagens, nome_real_cidade, avaliacoes = Controller.obter_informacoes(cidade)
     
     return render_template("result.html", 
                          nome_real_cidade=nome_real_cidade,
