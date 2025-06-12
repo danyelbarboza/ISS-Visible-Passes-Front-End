@@ -8,6 +8,9 @@ class Controller:
     def coordenadas_nominatim(cidade_usuario):
         # Obtém as coordenadas da cidade informada utilizando a API Nominatim
         coordenadas = NominatimClient.obter_coordenadas_nominatim(cidade_usuario)
+        if coordenadas is None:
+            return None
+        
         latitude = coordenadas[0]
         longitude = coordenadas[1]
         return latitude, longitude
@@ -15,11 +18,15 @@ class Controller:
     def nome_da_cidade_nominatim(latitude, longitude):
         return NominatimClient.obter_localizacao_por_coordenadas(latitude, longitude)
     
+
     def obter_informacoes(cidade_usuario):
         # Obter coordenadas
-        latitude, longitude = Controller.coordenadas_nominatim(cidade_usuario)
-        if latitude is None or longitude is None:
-            return None, "Cidade não encontrada"
+        coordenadas = Controller.coordenadas_nominatim(cidade_usuario)
+        if coordenadas is None:
+            return None
+        
+        latitude = coordenadas[0]
+        longitude = coordenadas[1]
         
         print(f"Latitude: {latitude}")
         print(f"Longitude: {longitude}")
