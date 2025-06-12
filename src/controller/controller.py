@@ -55,12 +55,12 @@ class Controller:
             resultado = {
                 "id": pass_data['id'],
                 "start": pass_data['start'],
-                "duration": pass_data['duration'],
-                "temperature": weather_data['weather']['temperature_2m'],
-                "cloudcover": weather_data['weather']['cloudcover'],
-                "visibility": weather_data['weather']['visibility'],
-                "humidity": weather_data['weather']['relative_humidity_2m'],
-                "is_day": "Day" if weather_data['weather']['is_day'] == 1 else "Night"
+                "duration": int(pass_data['duration']),
+                "temperature": float(weather_data['weather']['temperature_2m']),
+                "cloudcover": int(weather_data['weather']['cloudcover']),
+                "visibility": float(weather_data['weather']['visibility']),
+                "humidity": int(weather_data['weather']['relative_humidity_2m']),
+                "is_day": "Day" if int(weather_data['weather']['is_day']) == 1 else "Night"
             }
             resultados.append(resultado)
             avaliacoes.append(Controller.avaliar_visibilidade_iss(resultado))
