@@ -1,8 +1,3 @@
-Claro\! Analisei o código do seu projeto e reescrevi o `README.md` para refletir com precisão a estrutura e a funcionalidade atuais. Também corrigi algumas pequenas inconsistências e adicionei notas importantes sobre a configuração.
-
-Aqui está o `README.md` revisado em formato Markdown:
-
------
 
 # ISS Visible Passes Web Application
 
